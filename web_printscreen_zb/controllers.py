@@ -4,6 +4,7 @@
 #    Copyright (c) 2013 ZestyBeanz Technologies Pvt. Ltd.
 #    (http://wwww.zbeanztech.com)
 #    contact@zbeanztech.com
+#    prajul@zbeanztech.com
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -24,7 +25,7 @@ try:
     import json
 except ImportError:
     import simplejson as json
-import openerp.addons.web.http as openerpweb
+import web.http as openerpweb
 from web.controllers.main import ExcelExport
 from web.controllers.main import Export
 import re
@@ -178,7 +179,7 @@ class ZbPdfExport(ExportPdf):
                                                 data.get('company_name','')),
                                  headers=[('Content-Disposition',
                                            'attachment; filename=PDF Export'),
-                                          ('Content-Type', self.content_type())],
-                                 cookies={'fileToken': int(token)})
+                                          ('Content-Type', self.content_type)],
+                                 cookies={'fileToken': token})
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
