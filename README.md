@@ -1,4 +1,4 @@
-openerp-7-web-addons
+Odoo Print Utils Web
 ====================
 
-OpenERP 7 web addons adds some functionality to OpenERP 7 which makes daily operations in OpenERP more user friendly.
+Print util Tree to PDF/Excel
