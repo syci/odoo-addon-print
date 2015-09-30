@@ -1,24 +1,14 @@
 openerp.web_printscreen_zb = function(instance, m) {
     
-    var _t = instance.web._t,
-    QWeb = instance.web.qweb;
+    var _t = instance.web._t;
+    var QWeb = instance.web.qweb;
     
     instance.web.ListView.include({
         load_list: function () {
             var self = this;
             this._super.apply(this, arguments);
-            var links = document.getElementsByClassName("oe_list_button_import_excel");
-            var links_pdf = document.getElementsByClassName("oe_list_button_import_pdf");
-            if (links && links[0]){
-                links[0].onclick = function() {
-                    self.export_to_excel("excel")
-                };
-            }
-            if (links_pdf && links_pdf[0]){
-                links_pdf[0].onclick = function() {
-                    self.export_to_excel("pdf")
-                };
-            }
+            self.$pager.find(".oe_list_button_import_excel").unbind('click').click(function(event){self.export_to_excel("excel")})
+            self.$pager.find(".oe_list_button_import_pdf").unbind('click').click(function(event){self.export_to_excel("pdf")})
         },
         export_to_excel: function(export_type) {
             var self = this
@@ -54,7 +44,7 @@ openerp.web_printscreen_zb = function(instance, m) {
 	                group_th_eles = $data_ele.find('th')
 	                $.each(group_th_eles,function(){
 	                    $group_th_ele = $(this)
-	                    text = $group_th_ele.text()
+	                    text = $group_th_ele.text().trim() || ""
 	                    is_analysis = true
 	                    data.push({'data': text, 'bold': true})
 	                });

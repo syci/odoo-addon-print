@@ -4,6 +4,7 @@
 #    Copyright (c) 2013 ZestyBeanz Technologies Pvt. Ltd.
 #    (http://wwww.zbeanztech.com)
 #    contact@zbeanztech.com
+#    prajul@zbeanztech.com
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -22,7 +23,7 @@
 
 {
     'name': 'Web Printscreen ZB',
-    'version': '1.4',
+    'version': '1.0',
     'category': 'Web',
     'description': """
         Module to export current active tree view in to excel report
@@ -30,7 +31,7 @@
     'author': 'Zesty Beanz Technologies',
     'website': 'http://www.zbeanztech.com',
     'depends': ['web'],
-    'js': ['static/src/js/web_printscreen_export.js'],
+    'data': ['views/web_printscreen_zb.xml'],
     'qweb': ['static/src/xml/web_printscreen_export.xml'],
     'installable': True,
     'auto_install': False,
